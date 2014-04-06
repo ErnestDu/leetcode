@@ -1,0 +1,32 @@
+class Solution:
+    # @param A  a list of integers
+    # @param m  an integer, length of A
+    # @param B  a list of integers
+    # @param n  an integer, length of B
+    # @return nothing
+	def merge(self, A, m, B, n):
+		#if n == 0:
+		#	return None
+		#if m == 0:
+		#	for i in range (0, len(B)):
+		#		A.append(B[i]) 
+		#	return None
+		i, j, k = m - 1, n - 1, m + n - 1
+		#print(i, j, k)
+		while i >= 0 and j >= 0:
+			if B[j] > A[i]:
+				A[k] = B[j]
+				j -= 1
+			else:
+				A[k] = A[i]
+				i -= 1
+			k -= 1
+		while j >= 0:
+			A[k] = B[j]
+			j -= 1
+			k -= 1
+		print(A)
+A = []
+B = [1]
+s = Solution()
+s.merge(A, len(A), B, len(B))
