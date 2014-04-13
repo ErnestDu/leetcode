@@ -24,5 +24,5 @@ class Solution:
 			return a
 
 s = Solution()
-a = [1, 2, 3]
+a = [1, 1, 0, 0]
 print(s.permute(a))
